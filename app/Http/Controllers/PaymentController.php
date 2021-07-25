@@ -55,8 +55,11 @@ class PaymentController extends Controller
 
                 })->pay()->render();
 
-            }else{
-                return 'home';
+            }
+            if ($request['pay_method'] == 'home'){
+                $order->where('id',$order->id)->latest()->update([
+                   'status'=>'home'
+                ]);
             }
 
         }

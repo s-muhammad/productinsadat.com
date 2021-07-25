@@ -86,6 +86,9 @@
                                                 @case('canceled')
                                                 لغو شده
                                                 @break
+                                                    @case('home')
+                                                درب منزل
+                                                @break
                                             @endswitch
                                             </td>
                                             <td class="detail">
