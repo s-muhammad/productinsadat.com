@@ -7,7 +7,7 @@
             <div class="header-right">
                 <div class="logo">
                     @foreach(\App\Models\Setting::get() as $logo)
-                    <a href="{{url('/')}}"><img src="{{$logo->logo}}"></a>
+                    <a href="{{url('/')}}"><img src="{{$logo->logo}}" width="100px"></a>
                     @endforeach
                 </div>
                 <div class="col-lg-9 col-md-9 col-xs-12 pull-right">
