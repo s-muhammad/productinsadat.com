@@ -37,4 +37,8 @@ return [
     'sepehr'=>[
       'token'=>env('SEPEHR_TOKEN')
     ],
+
+    'payping'=>[
+      'token'=>env('PAYPING_TOKEN')
+    ],
 ];

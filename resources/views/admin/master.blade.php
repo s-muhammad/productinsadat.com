@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{csrf_token()}}">
-    <title>پنل مدیریت | داشبورد اول</title>
+    <title>پنل مدیریت </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -47,7 +47,7 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <strong>CopyLeft &copy; 2018 <a href="http://github.com/hesammousavi/">حسام موسوی</a>.</strong>
+        <strong>CopyLeft &copy; 2021 <a href="http://web-develop.org">web-develop.org</a>.</strong>
     </footer>
 
     <!-- Control Sidebar -->
@@ -95,6 +95,6 @@
 <script src="{{ asset('js/admin.js') }}"></script>
 {{--<script src="{{ asset('js/app.js') }}"></script>--}}
 @yield('script')
-@include('sweet::alert')
+{{--@include('sweet::alert')--}}
 </body>
 </html>

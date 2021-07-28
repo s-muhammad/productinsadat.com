@@ -102,7 +102,7 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         $order->delete();
-        alert()->success();
+        alert()->success('انجام شد');
         return back();
     }
 }

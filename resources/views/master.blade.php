@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta content="{{csrf_token()}}" name="csrf-token">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport'/>
-    <title>فروشگاه اینترنتی دیجی اسمارت</title>
+{!! SEO::generate() !!}
     <!--    font------------------------------------>
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/materialdesignicons.css">
@@ -44,5 +44,7 @@
 <script src="/assets/js/main.js"></script>
 <!--bootstrap-slider----------------------------->
 <script src="/assets/js/bootstrap-slider.min.js"></script>
+{{--<script src="{{ asset('js/app.js') }}"></script>--}}
 @yield('script')
+{{--@include('sweet::alert')--}}
 </html>

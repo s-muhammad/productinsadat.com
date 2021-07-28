@@ -9,7 +9,7 @@
                     <li class="nav-item">
                         <a href="{{ route('admin.') }}" class="nav-link {{ isActive('admin.') }}">
                             <i class="nav-icon fa fa-dashboard"></i>
-                            <p>پنل مدیریت</p>
+                            <p> داشبورد</p>
                         </a>
                     </li>
                     @can('show-users')
@@ -23,7 +23,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ route('admin.users.index') }}" class="nav-link {{ isActive('admin.users.index') }}">
+                                    <a href="{{ route('admin.users.index') }}" class="nav-link {{ isActive(['admin.users.index' , 'admin.users.create' , 'admin.users.edit']) }}">
                                         <i class="fa fa-circle-o nav-icon"></i>
                                         <p>لیست کاربران</p>
                                     </a>
@@ -32,11 +32,11 @@
                         </li>
                     @endcan
                     @canany(['show-permissions','show-roles'])
-                    <li class="nav-item has-treeview {{ isActive(['admin.permissions.index', 'admin.roles.index'] , 'menu-open') }}">
+                    <li class="nav-item has-treeview {{ isActive(['admin.permissions.index','admin.permissions.create', 'admin.roles.index'] , 'menu-open') }}">
                         <a href="#" class="nav-link  {{ isActive(['admin.permissions.index' , 'admin.roles.index']) }}">
-                            <i class="nav-icon fa fa-users"></i>
+                            <i class="nav-icon fa fa-user-times"></i>
                             <p>
-                                بخش اجازه دسترسی
+                                 دسترسی کاربران
                                 <i class="right fa fa-angle-left"></i>
                             </p>
                         </a>
@@ -48,10 +48,8 @@
                                     <p>همه مقام ها</p>
                                 </a>
                             </li>
-                        </ul>
                         @endcan
                         @can('show-permissions')
-                        <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('admin.permissions.index') }}" class="nav-link {{ isActive('admin.permissions.index') }}">
                                     <i class="fa fa-circle-o nav-icon"></i>
@@ -64,7 +62,7 @@
                     @endcanany
                     <li class="nav-item has-treeview {{ isActive(['admin.products.index' , 'admin.products.create' , 'admin.products.edit', 'admin.categories.index'] , 'menu-open') }}">
                         <a href="#" class="nav-link  {{ isActive('admin.products.index') }}">
-                            <i class="nav-icon fa fa-users"></i>
+                            <i class="nav-icon fa fa-shopping-basket"></i>
                             <p>
                                 محصولات
                                 <i class="right fa fa-angle-left"></i>
@@ -99,7 +97,7 @@
                     </li>
                     <li class="nav-item has-treeview {{ isActive(['admin.comments.index' ] , 'menu-open') }}">
                         <a href="#" class="nav-link {{ isActive('admin.comments.index') }}">
-                            <i class="nav-icon fa fa-users"></i>
+                            <i class="nav-icon fa fa-comment"></i>
                             <p>
                                 نظرات
                                 <i class="right fa fa-angle-left"></i>
@@ -116,7 +114,7 @@
                     </li>
                     <li class="nav-item has-treeview {{ isActive(['admin.discount.index' ] , 'menu-open') }}">
                         <a href="#" class="nav-link {{ isActive('admin.discount.index') }}">
-                            <i class="nav-icon fa fa-users"></i>
+                            <i class="nav-icon fa fa-gift"></i>
                             <p>
                                 تخفیف ها
                                 <i class="right fa fa-angle-left"></i>
@@ -133,7 +131,7 @@
                     </li>
                     <li class="nav-item has-treeview {{ isActive(['admin.menu.index' ] , 'menu-open') }}">
                         <a href="#" class="nav-link {{ isActive('admin.menu.index') }}">
-                            <i class="nav-icon fa fa-users"></i>
+                            <i class="nav-icon fa fa-cogs"></i>
                             <p>
                                 تنظیمات
                                 <i class="right fa fa-angle-left"></i>
@@ -146,32 +144,24 @@
                                     <p>لیست منو ها</p>
                                 </a>
                             </li>
-                        </ul>
-                        <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('admin.setting.index') }}" class="nav-link {{ isActive('admin.setting.index') }}">
                                     <i class="fa fa-circle-o nav-icon"></i>
                                     <p>تنظیمات</p>
                                 </a>
                             </li>
-                        </ul>
-                        <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('admin.slider.index') }}" class="nav-link {{ isActive('admin.slider.index') }}">
                                     <i class="fa fa-circle-o nav-icon"></i>
                                     <p>اسلایدرها</p>
                                 </a>
                             </li>
-                        </ul>
-                        <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('admin.banner.index') }}" class="nav-link {{ isActive('admin.banner.index') }}">
                                     <i class="fa fa-circle-o nav-icon"></i>
                                     <p>بنرهای سایت</p>
                                 </a>
                             </li>
-                        </ul>
-                        <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ route('admin.about.index') }}" class="nav-link {{ isActive('admin.about.index') }}">
                                     <i class="fa fa-circle-o nav-icon"></i>
@@ -182,7 +172,7 @@
                     </li>
                     <li class="nav-item has-treeview {{ isActive(['admin.orders.index' ] , 'menu-open') }}">
                         <a href="#" class="nav-link {{ isActive('admin.orders.index') }}">
-                            <i class="nav-icon fa fa-users"></i>
+                            <i class="nav-icon fa fa-shopping-bag"></i>
                             <p>
                                 سفارشات
                                 <i class="right fa fa-angle-left"></i>

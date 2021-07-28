@@ -21,6 +21,7 @@ class ProductController extends Controller
             'view_count'=>+1
         ]);
         $images = $product->gallery()->latest()->get();
+        $this->seo()->setTitle($product->title);
         return view('products.single-product',compact('product','images'));
     }
     public function category(Category $category)

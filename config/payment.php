@@ -10,7 +10,7 @@ return [
     | You can switch to a different driver at runtime.
     |
     */
-    'default' => 'sepehr',
+    'default' => 'payping',
 
     /*
     |--------------------------------------------------------------------------
@@ -130,7 +130,7 @@ return [
             'apiPurchaseUrl' => 'https://api.payping.ir/v1/pay/',
             'apiPaymentUrl' => 'https://api.payping.ir/v1/pay/gotoipg/',
             'apiVerificationUrl' => 'https://api.payping.ir/v1/pay/verify/',
-            'merchantId' => '',
+            'merchantId' => env('PAYPING_TOKEN'),
             'callbackUrl' => 'http://yoursite.com/path/to',
             'description' => 'payment using payping',
         ],

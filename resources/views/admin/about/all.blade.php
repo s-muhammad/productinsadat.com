@@ -12,7 +12,7 @@
                         @foreach($about as $about)
                             <tr>
                                 <th>توضیحات</th>
-                                <td>{{!!$about->description!!}}</td>
+                                <td>{!!$about->description!!}</td>
                             </tr>
                             <tr>
                                 <td class="d-flex">

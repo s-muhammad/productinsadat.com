@@ -45,7 +45,7 @@ class PaymentController extends Controller
 //            $invoice = (new Invoice)->amount(1000);
 
             if ($request['pay_method'] == 'web'){
-                return ShetabitPayment::callbackUrl(route('payment.callback'))->purchase($invoice, function($driver, $transactionId) use ($order, $cartItem ,$invoice) {
+                return ShetabitPayment::callbackUrl(route('payment.callback'))->purchase($invoice, function($driver, $transactionId) use ($order, $cart ,$invoice) {
 
                     $order->payments()->create([
                         'resnumber' => $invoice->getUuid(),
@@ -68,9 +68,9 @@ class PaymentController extends Controller
 
     public function callback(Request $request)
     {
+
         try {
             $payment = Payment::where('resnumber', $request->clientrefid)->firstOrFail();
-
             // $payment->order->price
             $receipt = ShetabitPayment::amount($payment->order->price)->transactionId($request->clientrefid)->verify();
 
@@ -82,7 +82,7 @@ class PaymentController extends Controller
                 'status' => 'paid'
             ]);
 
-//            alert()->success('پرداخت شما موفق بود');
+            alert()->success('پرداخت شما موفق بود');
             return redirect(route('shipping.complete'));
 
         } catch (InvalidPaymentException $exception) {

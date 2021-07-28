@@ -170,8 +170,8 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">رنگ بندی ها</label>
                             <select class="form-control" name="colors[]" id="colors" multiple>
-                                @foreach(\App\Models\Color::all() as $color)
-                                    <option value="{{ $color->id }}">{{ $color->title }}</option>
+                            @foreach(\App\Models\Color::all() as $color)
+                                    <option value="{{ $color->id }}" {{ in_array($color->id , $product->colors->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $color->title }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -179,7 +179,7 @@
                             <label for="inputEmail3" class="col-sm-2 control-label">سایز بندی ها</label>
                             <select class="form-control" name="sizes[]" id="sizes" multiple>
                                 @foreach(\App\Models\Size::all() as $size)
-                                    <option value="{{ $size->id }}">{{ $size->title }}</option>
+                                    <option value="{{ $size->id }}" {{ in_array($size->id , $product->sizes->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $size->title }}</option>
                                 @endforeach
                             </select>
                         </div>

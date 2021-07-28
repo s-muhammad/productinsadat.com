@@ -31,7 +31,7 @@ return [
     'disks' => [
         'images' => [
             'driver' => 'local',
-            'root' => public_path('images'),
+            'root' => 'images',
             'url' => '/images',
         ],
 

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 //});
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index']);
 Route::get('search', [App\Http\Controllers\IndexController::class, 'search']);
+Route::get('about', [App\Http\Controllers\IndexController::class, 'about']);
 
 Auth::routes(['verify'=>true]);
 
@@ -23,7 +24,7 @@ Route::middleware('auth')->group(function (){
     Route::post('comments', [App\Http\Controllers\HomeController::class, 'Comment'])->name('send.comment');
 
     Route::post('payment', [App\Http\Controllers\PaymentController::class, 'payment'])->name('cart.payment');
-    Route::get('payment/callback', [App\Http\Controllers\PaymentController::class, 'callback'])->name('payment.callback');
+    Route::post('payment/callback', [App\Http\Controllers\PaymentController::class, 'callback'])->name('payment.callback');
     Route::get('shipping', [App\Http\Controllers\PaymentController::class, 'shipping'])->name('cart.shipping');
     Route::get('shippingComplete', [App\Http\Controllers\PaymentController::class, 'shippingComplete'])->name('shipping.complete');
 
